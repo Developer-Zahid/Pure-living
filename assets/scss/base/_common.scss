@@ -1,0 +1,210 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+::selection{
+	color: $color-white;
+	background: $color-primary;
+}
+
+html,
+body{
+	scroll-behavior: smooth;
+}
+
+html{
+	font-size: 16px;
+	text-size-adjust: none;
+}
+
+body {
+	color: $color-white;
+	font-weight: 400;
+	font-family: $font-primary;
+	background-color: $color-bg;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: unset;
+}
+
+button,
+button:hover,
+button:focus,
+button:active {
+	outline: none;
+}
+
+input:-webkit-autofill{
+	-webkit-text-fill-color: unset;
+	transition: background-color 5000s;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img{
+	object-fit: cover;
+}
+
+.user-select-none{
+	pointer-events: none;
+}
+
+.list-inline{
+	font-size: 0;
+	&-item{
+		font-size: 1rem;
+	}
+}
+
+.main{
+	overflow-x: hidden;
+}
+
+/* Custom Container Style */
+.container{
+	@include min-desktop-xl{
+		max-width: 1310px;
+	}
+}
+
+/* Common Slick Style */
+.slick{
+	&__arrows{
+		position: absolute;
+		bottom: 0;
+		transform: translateX(30%) translateY(50%);
+		z-index: 2;
+		width: toRem(70);
+		height: toRem(70);
+		color: #1F1F2B;
+		background-color: $color-white;
+		font-size: toRem(20);
+		text-align: center;
+		cursor: pointer;
+		border: 1px solid rgba(150, 158, 186, 0.42);
+		@extend %transition;
+		&--left{
+			left: 0;
+		}
+		&--right{
+			left: toRem(70);
+		}
+		&:hover,
+		&:focus-visible{
+			color: $color-primary;
+			background-color: $color-white;
+		}
+	}
+	&-dots{
+		display: flex;
+		justify-content: center;
+		margin-bottom: 0;
+		line-height: 0;
+		li{
+			&:not(:last-child){
+				margin-right: 1rem;
+			}
+			button{
+				font-size: 0;
+				width: toRem(8);
+				height: toRem(8);
+				background: $color-primary;
+				border: 1px solid $color-primary;
+				border-radius: toRem(8);
+				@extend %transition;
+			}
+			&.slick-active{
+				button{
+					width: toRem(16);
+					background: transparent;
+				}
+			}
+		}
+	}
+	&-progressbar{
+		position: relative;
+		display: block;
+		width: 100%;
+		max-width: toRem(155);
+		height: toRem(7);
+		border-radius: toRem(7);
+		overflow: hidden;
+		background-color: rgba($color: #C4C4C4, $alpha: 0.2);
+		&__progress{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 100%;
+			border-radius: toRem(10);
+			background-color: $color-primary;
+			transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+		}
+	}
+}
+
+/* Common Section Gap Style */
+.section-gap{
+	padding: 6rem 0;
+	@include desktop{
+		padding: 3rem 0;
+	}
+}
+
+/* Common Section Heading Style */
+.section-header{
+	margin-bottom: toRem(80);
+	@include mobile{
+		margin-bottom: toRem(30);
+	}
+	&__sub-title{
+		color: $color-gray;
+		font-size: toRem(18);
+		font-weight: 500;
+		@include mobile{
+			font-size: toRem(14);
+		}
+	}
+	&__title{
+		font-size: toRem(50);
+		line-height: 1.2;
+		font-weight: 700;
+		@include tablet{
+			font-size: toRem(30);
+		}
+		@include mobile{
+			font-size: toRem(26);
+		}
+	}
+	&__text{
+		line-height: 1.67;
+		@include min-tablet{
+			font-size: toRem(24);
+		}
+	}
+}
+
+.primary-text{
+	color: $color-primary;
+}
+
+.rating-list{
+	gap: 5px;
+	&__icon{
+		color: $color-yellow;
+	}
+}

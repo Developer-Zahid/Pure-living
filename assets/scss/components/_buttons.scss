@@ -1,0 +1,79 @@
+/* Common Button's Style */
+.primary-btn,
+.primary-btn-outline,
+.tag-btn{
+	display: inline-block;
+	text-align: center;
+	color: $color-white;
+}
+
+.primary-btn,
+.primary-btn-outline{
+	font-size: toRem(20);
+	font-family: $font-primary;
+	font-weight: 500;
+	padding: toRem(12) toRem(18);
+	border-radius: toRem(5);
+	@extend %transition;
+}
+
+.primary-btn{
+	border: 2px solid $color-primary;
+	background-color: $color-primary;
+	&:hover, 
+	&:focus{
+		color: $color-white;
+		background-color: transparent;
+	}
+	&--light{
+		color: $color-primary;
+		background-color: $color-white;
+		border-color: $color-white;
+	}
+}
+.primary-btn-outline{
+	border: 2px solid $color-primary;
+	background-color: transparent;
+	&:hover,
+	&:focus{
+		color: $color-white;
+		background-color: $color-primary;
+	}
+	&--light{
+		border-color: $color-white;
+		&:hover, 
+		&:focus{
+			color: $color-primary;
+			background-color: $color-white;
+		}
+	}
+}
+
+.tag-btn{
+	background-color: $color-primary;
+	font-size: toRem(14);
+	font-weight: 700;
+	padding: toRem(5) toRem(12);
+}
+
+.scroll-top{
+	bottom: 3%;
+	right: 1%;
+	display: none;
+	cursor: pointer;
+	z-index: 7;
+	@include mobile{
+		bottom: 2%;
+	}
+	&__btn{
+		width: 2.8rem;
+		height: 2.8rem;
+		font-size: 1.1rem;
+		color: $color-white;
+		background: $color-primary;
+		@extend %transition;
+		&:hover{
+			background: darken($color-primary, $amount: 20);
+		}
+	}
+}

@@ -1,0 +1,188 @@
+/* How Its Works Section Style */
+.process{
+    &::before,
+    &::after{
+        position: absolute;
+        z-index: -1;
+    }
+    &::before{
+        content: url("../images/section-bgs/section-bg-2.png");
+        top: 0;
+        left: 0;
+        transform: translateY(-39%);
+    }
+    &::after{
+        content: url("../images/section-bgs/section-bg-3.png");
+        bottom: 0;
+        right: 0;
+        transform: translateY(40%);
+    }
+    &__float-icon{
+        font-size: toRem(100);
+        color: $color-primary;
+        z-index: -1;
+        &--top{
+            right: 0;
+            transform: translateX(-20%) translateY(-30%);
+        }
+        &--bottom{
+            right: 0;
+            bottom: 0;
+            transform: translateX(-20%) translateY(40%);
+            &-center{
+                left: 30%;
+                bottom: 0;
+                @include min-mobile{
+                    transform: translateX(-40%) translateY(100%);
+                }
+            }
+        }
+    }
+    &__image-wrapper{
+        @include min-desktop-lg{
+            transform: translateX(-10%);
+        }
+        @media screen and (max-width: 1600px) {
+            max-width: toRem(500);
+        }
+        @include desktop-xl{
+            max-width: toRem(300);
+        }
+        @include desktop-lg{
+            max-width: toRem(500);
+        }
+        @include tablet{
+            max-width: toRem(400);
+        }
+        .blur-card{
+            background: radial-gradient(121.42% 339.9% at 0% 82.82%, rgba(255, 255, 255, 0.2706) 9.13%, rgba(31, 31, 43, 0.2046) 76.28%), radial-gradient(121.42% 339.9% at 0% 82.82%, rgba(31, 31, 43, 0.1848) 0%, rgba(255, 255, 255, 0.2706) 100%);
+            box-shadow: 0px 2px 14px rgba(63, 81, 102, 0.12), 0px 50px 120px 20px rgba(0, 0, 0, 0.05);
+            @include mobile{
+                margin-top: toRem(20);
+                margin-bottom: toRem(20);
+                display: block;
+            }
+            @include min-mobile{
+                position: absolute;
+            }
+            &--left{
+                @include min-mobile{
+                    top: 0;
+                    left: 0;
+                    transform: translateX(-50%) translateY(30%);
+                }
+            }
+            &--bottom{
+                @include min-mobile{
+                    bottom: 0;
+                    right: 0;
+                    transform: translateX(-10%) translateY(50%);
+                }
+                @include min-desktop-xl{
+                    transform: translateX(-30%) translateY(30%);
+                }
+                .graph-image{
+                    @include desktop-xl{
+                        max-width: toRem(150);
+                    }
+                    @include tablet{
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &__wrapper{
+        &::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateX(-50%) translateY(-50%);
+            width: toRem(5);
+            height: 120%;
+            background: linear-gradient(180deg, rgba(85, 197, 149, 0) 0%, #77DD77 13.54%, #77DD77 89.58%, rgba(85, 197, 149, 0) 100%);
+            opacity: 0.58;
+            @include min-desktop{
+                left: toRem(190);
+            }
+            @include desktop{
+                left: toRem(40);
+            }
+            @include mobile{
+                left: toRem(25);
+                width: toRem(3);
+            }
+        }
+        @include desktop-lg{
+            margin-top: toRem(200);
+        }
+        &__block{
+            display: grid;
+            @include desktop{
+                grid-template-columns: toRem(80) 1fr;
+            }
+            @include mobile{
+                grid-template-columns: toRem(50) 1fr;
+            }
+            @include min-desktop{
+                grid-template-columns: toRem(150) toRem(80) 1fr;
+            }
+            &:not(:first-child){
+                margin-top: toRem(50);
+            }
+            &__step{
+                font-size: toRem(24);
+                @include desktop{
+                    grid-column: 2 / -1;
+                }
+                @include min-desktop{
+                    grid-column: span 1;
+                }
+            }
+            &__timeline{
+                &__bullet-point{
+                    width: toRem(30);
+                    height: toRem(30);
+                    background-color: $color-primary;
+                    @include mobile{
+                        width: toRem(10);
+                        height: toRem(10);
+                    }
+                }
+            }
+            &__card{
+                padding: toRem(28) toRem(34);
+                background: radial-gradient(121.42% 339.9% at 0% 82.82%, rgba(31, 31, 43, 0.1848) 0%, rgba(255, 255, 255, 0.2706) 100%);
+                box-shadow: 0px 2px 14px rgba(63, 81, 102, 0.12);
+                backdrop-filter: blur(90px);
+                border: 2px solid rgba($color: #A6A6A6, $alpha: 0.6);
+                border-radius: toRem(15);
+                max-width: toRem(475);
+                @include mobile{
+                    padding: toRem(20);
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    left: -2px;
+                    height: 100%;
+                    width: 100%;
+                    clip-path: polygon(0 0, 8px 0, 8px 100%, 0 100%);
+                    background-color: $color-primary;
+                    border-radius: toRem(8);
+                }
+                &__text{
+                    font-size: toRem(18);
+                    line-height: 1.583;
+                }
+                &__image{
+                    @include mobile{
+                        max-width: toRem(30);
+                    }
+                }
+            }
+        }
+    }
+}

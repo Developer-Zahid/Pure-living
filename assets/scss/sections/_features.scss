@@ -1,0 +1,38 @@
+/* Features Section Style */
+.features{
+    background: url("../images/section-bgs/section-bg-4.png") no-repeat center;
+    background-size: cover;
+    padding-bottom: toRem(200);
+    &__card{
+        background: radial-gradient(121.42% 339.9% at 0% 82.82%, rgba(255, 255, 255, 0.2706) 0%, rgba(31, 31, 43, 0.1848) 100%);
+        box-shadow: 0px 2px 14px rgba(63, 81, 102, 0.12);
+        backdrop-filter: blur(22px);
+        border: 2px solid rgba($color-white, $alpha: 0.63);
+        border-radius: toRem(14);
+        padding: toRem(25);
+        margin-bottom: toRem(30);
+        @include min-desktop-xl{
+            padding: toRem(35);
+        }
+        &__icon{
+            &-block{
+                width: toRem(97);
+                height: toRem(97);
+                background: radial-gradient(121.42% 339.9% at 0% 82.82%, rgba(255, 255, 255, 0.2706) 0%, rgba(31, 31, 43, 0.1848) 100%);
+                border: 1.8px solid #B6B6B6;
+                box-shadow: 0px 2px 14px rgba(63, 81, 102, 0.12);
+                backdrop-filter: blur(22px);
+                border-radius: 14px;
+            }
+            font-size: toRem(30);
+        }
+        &__title{
+            font-size: toRem(28);
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+        &__text{
+            color: #D1D1D1;
+        }
+    }
+}

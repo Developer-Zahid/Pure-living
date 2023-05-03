@@ -1,0 +1,49 @@
+/* 
+------------------
+Template Name: Pure Living | Solar Services Provider Website
+Version: 1.00
+------------------
+
+----------------
+Table of CSS Content
+----------------
+
+1.Google Fonts Link
+2.Custom Icons Link
+3.Typography Reset
+4.Reset CSS
+5.Custom Container Style
+6.Common Slick Style
+7.Common Section Gap Style
+8.Common Section Heading Style
+9.Common Transition Style
+10.Common Button's Style
+11.Common Blur Card Style
+12.Header Section Style
+13.Footer Section Style
+14.Banner Section Style
+15.How Its Works Section Style
+16.Testimonial Section Style
+17.Features Section Style
+18.Our Gallery Section Style
+19.Our Services Section Style
+
+------------------
+*/
+
+@import "./abstracts/variable";
+@import "./abstracts/mixin";
+@import "./abstracts/function";
+@import "./base/typography";
+@import "./base/common";
+@import "./abstracts/extend";
+@import "./components/buttons";
+@import "./components/blur-card";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./sections/banner";
+@import "./sections/process";
+@import "./sections/testimonial";
+@import "./sections/features";
+@import "./sections/gallery";
+@import "./sections/services";

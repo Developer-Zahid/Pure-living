@@ -1,0 +1,41 @@
+/* Footer Section Style */
+.footer{
+    &::before,
+    &::after{
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+    &::before{
+        content: url("../images/section-bgs/section-bg-7.png");
+        left: 0;
+    }
+    &::after{
+        content: url("../images/section-bgs/section-bg-8.png");
+        right: 0;
+    }
+    &__block{
+        &__title{
+            font-size: toRem(24);
+            line-height: toRem(36);
+            margin-bottom: toRem(28);
+        }
+        &__list{
+            &__items{
+                line-height: toRem(50);
+                font-weight: 400;
+            }
+            &__link{
+                font-size: toRem(20);
+                &:hover,
+                &:focus{
+                    text-decoration: $color-primary underline;
+                }
+            }
+        }
+    }
+    &__copyright{
+        font-size: toRem(24);
+        line-height: toRem(36);
+    }
+}

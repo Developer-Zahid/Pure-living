@@ -1,0 +1,38 @@
+/* Testimonial Section Style */
+.testimonial{
+    &__slide{
+        padding-left: toRem(15);
+        padding-right: toRem(15);
+        direction: ltr;
+    }
+    &__card{
+        background: radial-gradient(121.42% 339.9% at 0% 82.82%, rgba(31, 31, 43, 0.1848) 0%, rgba(255, 255, 255, 0.2706) 100%);
+        box-shadow: 0px 2px 14px rgba(63, 81, 102, 0.12);
+        backdrop-filter: blur(22px);
+        padding: toRem(28) toRem(30);
+        border: 2px solid rgba($color-white, $alpha: 0.63);
+        border-radius: toRem(15);
+        &__text{
+            font-size: toRem(20);
+            line-height: 1.64;
+        }
+        &__footer{
+            margin-top: toRem(25);
+            &__icon{
+                color: rgba($color: #888888, $alpha: 0.4);
+                font-size: toRem(50);
+            }
+        }
+        &__user-block{
+            &__avatar{
+                width: toRem(45);
+                height: toRem(45);
+                margin-right: toRem(20);
+            }
+            &__title{
+                font-size: toRem(18);
+                font-weight: 500;
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+/* Banner Section Style */
+.banner{
+    &::before{
+        content: url("../images/section-bgs/section-bg-1.png");
+        position: absolute;
+        top: toRem(-135);
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    &__title{
+        font-weight: 700;
+        line-height: 1.303;
+        letter-spacing: -1%;
+        @include min-tablet{
+            font-size: toRem(66);
+        }
+    }
+    &__text{
+        font-size: toRem(24);
+        line-height: 1.5;
+        margin-top: toRem(20);
+        margin-bottom: toRem(40);
+        @include min-desktop{
+            margin-right: toRem(50);
+        }
+    }
+    &__btn-wrapper{
+        gap: toRem(22);
+    }
+    &__float-icon{
+        font-size: toRem(100);
+        color: $color-primary;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: -1;
+    }
+    &__image-wrapper{
+        @include min-desktop-lg{
+            transform: translateX(15%);
+        }
+        @media screen and (max-width: 1600px) {
+            max-width: toRem(500);
+        }
+        @include desktop-xl{
+            max-width: toRem(400);
+        }
+        .blur-card{
+            @include mobile{
+                margin-top: toRem(20);
+                margin-bottom: toRem(20);
+                display: block;
+            }
+            @include min-mobile{
+                position: absolute;
+            }
+            &--right{
+                @include min-mobile{
+                    top: 0;
+                    right: 0;
+                    transform: translateX(15%) translateY(40%);
+                }
+                border-radius: toRem(20);
+                border-top-right-radius: 0;
+                background: radial-gradient(104.28% 357.61% at 4.95% 8%, rgba(233, 233, 233, 0.2464) 0%, rgba(203, 203, 203, 0.5808) 100%), linear-gradient(90deg, rgba(164, 172, 208, 0.42) 11.69%, rgba(187, 185, 205, 0.65) 91.04%);
+                box-shadow: 0px 2px 14px rgba(63, 81, 102, 0.12);
+            }
+            &--left{
+                @include min-mobile{
+                    bottom: 0;
+                    left: 0;
+                    transform: translateX(-50%) translateY(-100%);
+                }
+            }
+        }
+    }
+    &__image{
+        border-bottom: toRem(14) solid $color-primary;
+    }
+    &__float-image{
+        width: toRem(52);
+        height: toRem(52);
+        @include min-mobile{
+            position: absolute;
+            right: 0;
+            transform: translateX(160%) translateY(-20%);
+        }
+        img{
+            object-fit: cover;
+        }
+    }
+}
